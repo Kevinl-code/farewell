@@ -152,6 +152,56 @@
       object-fit: contain;
       box-shadow: 0 0 40px rgba(0,255,255,0.6);
     }
+    /* ===== LAYERED INVITATION EFFECT ===== */
+
+.bg-invite {
+
+  position: absolute;
+
+  max-width: calc(100vw - 10px);
+
+  max-height: calc(100vh - 10px);
+
+  object-fit: contain;
+
+  transform: rotate(180deg) scale(1.02);
+
+  opacity: 0.25;
+
+  filter: blur(1.5px);
+
+}
+
+
+
+.main-invite {
+
+  position: relative;
+
+  max-width: calc(100vw - 10px);
+
+  max-height: calc(100vh - 10px);
+
+  object-fit: contain;
+
+  border-radius: 12px;
+
+  box-shadow: 0 0 45px rgba(0,255,255,0.7);
+
+  animation: floatPoster 4s ease-in-out infinite;
+
+}
+
+
+
+@keyframes floatPoster {
+
+  0%,100% { transform: translateY(0); }
+
+  50% { transform: translateY(-12px); }
+
+  }
+    
 
   </style>
 </head>
@@ -173,10 +223,26 @@
     <div class="sub-box">Department of Data Science • Bishop Heber College</div>
   </div>
 
-  <!-- PAGE 2 (INVITATION) -->
-  <div class="page2" id="page2">
-    <img src="fw26_in.png" alt="Invitation Poster">
-  </div>
+  <!-- PAGE 2 (INVITATION LAYERED) -->
+
+<div class="page2" id="page2">
+
+  
+
+  <!-- BACKGROUND INVITATION (180° ROTATED) -->
+
+  <img src="fw26_bg.png" class="bg-invite" alt="Background Invitation">
+
+
+
+  <!-- MAIN INVITATION -->
+
+  <img src="fw26_in.png" class="main-invite" alt="Invitation Poster">
+
+
+
+</div>
+
 
   <script>
     /* ===== COUNTDOWN TIMER ===== */
@@ -213,4 +279,5 @@
 
 </body>
 </html>
+
 
